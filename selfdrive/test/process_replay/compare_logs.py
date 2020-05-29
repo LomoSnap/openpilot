@@ -8,7 +8,7 @@ import dictdiffer
 if "CI" in os.environ:
   tqdm = lambda x: x
 else:
-  from tqdm import tqdm
+  from tqdm import tqdm  # type: ignore
 
 from tools.lib.logreader import LogReader
 

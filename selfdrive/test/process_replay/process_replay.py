@@ -7,7 +7,7 @@ import importlib
 if "CI" in os.environ:
   tqdm = lambda x: x
 else:
-  from tqdm import tqdm
+  from tqdm import tqdm   # type: ignore
 
 from cereal import car, log
 from selfdrive.car.car_helpers import get_car
@@ -202,7 +202,7 @@ CONFIGS = [
     proc_name="controlsd",
     pub_sub={
       "can": ["controlsState", "carState", "carControl", "sendcan", "carEvents", "carParams"],
-      "thermal": [], "health": [], "liveCalibration": [], "dMonitoringState": [], "plan": [], "pathPlan": [], "gpsLocation": [],
+      "thermal": [], "health": [], "liveCalibration": [], "dMonitoringState": [], "plan": [], "pathPlan": [], "gpsLocation": [], "liveLocationKalman": [],
       "model": [],
     },
     ignore=["logMonoTime", "valid", "controlsState.startMonoTime", "controlsState.cumLagMs"],
